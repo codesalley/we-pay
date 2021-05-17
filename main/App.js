@@ -11,7 +11,7 @@ const App = () => {
   return (
     <NativeRouter>
       <View style={style.pageContainer}>
-        <SafeAreaView style={{backgroundColor: 'blue'}}></SafeAreaView>
+        <SafeAreaView style={{backgroundColor: '#5056FD'}}></SafeAreaView>
         <Route exact path="/">
           <WalletScreen />
         </Route>
@@ -36,8 +36,6 @@ const style = StyleSheet.create({
   pageContainer: {
     height: mainHeight,
     position: 'relative',
-    borderColor: 'red',
-    borderWidth: 2,
   },
 });
 

@@ -1,18 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import TopHeader from '../components/TopHeader';
+import WalletOptions from '../components/WalletOptions';
 
 const WalletScreen = () => (
   <View style={walletStyle.container}>
     <View style={walletStyle.mainIntro}>
-      <View>
-        <Text> Time</Text>
-        <Text> -0- </Text>
-      </View>
-      <View>
-        <Text> Weather </Text>
-        <Text> -10- </Text>
-      </View>
+      <TopHeader />
     </View>
+    <WalletOptions />
     <View>
       <Text> Body </Text>
     </View>
@@ -26,7 +22,7 @@ const walletStyle = StyleSheet.create({
   mainIntro: {
     display: 'flex',
     justifyContent: 'space-between',
-    backgroundColor: 'blue',
+    backgroundColor: '#5056FD',
     paddingHorizontal: '3%',
     flexDirection: 'row',
   },
