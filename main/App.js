@@ -11,7 +11,7 @@ const App = () => {
   return (
     <NativeRouter>
       <View style={style.pageContainer}>
-        <SafeAreaView></SafeAreaView>
+        <SafeAreaView style={{backgroundColor: 'blue'}}></SafeAreaView>
         <Route exact path="/">
           <WalletScreen />
         </Route>
