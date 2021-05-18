@@ -59,7 +59,7 @@ const navStye = StyleSheet.create({
     paddingVertical: 10,
   },
   activeNavColor: {
-    color: 'blue',
+    color: '#5056FD',
   },
   disableNavColor: {
     color: 'gray',
