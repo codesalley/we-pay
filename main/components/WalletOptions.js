@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet, Dimensions} from 'react-native';
 import PriceCard from './PriceCard';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -47,39 +47,61 @@ const testData = [
 
 const WalletOptions = () => {
   return (
-    <View>
-      <Text>12.3230383 BTC</Text>
-      <Text>$230383 10% ^</Text>
-      <View>
-        <Icon name="east" />
-        <Icon name="autorenew" />
-        <Icon name="add" />
+    <View style={style.container}>
+      <View style={style.currentPrice}>
+        <Text>12.3230383 BTC</Text>
+        <Text>$230383 10% ^</Text>
       </View>
-      <View>
-        <Text>Wallets </Text>
-        <Text>See All </Text>
-      </View>
-      <View>
+      <View style={style.optionContainer}>
         <View>
-          <FlatList
-            data={testData}
-            renderItem={ele => <PriceCard props={ele} />}
-            keyExtractor={item => item.id}
-            style={style.listview}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          />
+          <Icon name="east" />
+          <Text>Send </Text>
         </View>
+        <View>
+          <Icon name="autorenew" />
+          <Text>Exchange </Text>
+        </View>
+        <View>
+          <Icon name="add" />
+          <Text>Receive</Text>
+        </View>
+      </View>
+      <View style={style.listContainer}>
+        <FlatList
+          data={testData}
+          renderItem={ele => <PriceCard props={ele} />}
+          keyExtractor={item => item.id}
+          style={style.listview}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        />
       </View>
     </View>
   );
 };
+
+const mainHeight = Dimensions.get('window').height;
 
 const style = StyleSheet.create({
   listview: {
     display: 'flex',
     flexDirection: 'row',
     paddingLeft: '3%',
+  },
+  container: {
+    backgroundColor: '#5056FD',
+    height: mainHeight * 0.4,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingBottom: '10%',
+  },
+  listContainer: {},
+  optionContainer: {
+    paddingHorizontal: '3%',
+  },
+  currentPrice: {
+    paddingHorizontal: '3%',
   },
 });
 

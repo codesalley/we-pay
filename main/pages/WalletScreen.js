@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import TopHeader from '../components/TopHeader';
 import WalletOptions from '../components/WalletOptions';
+import HistoryCard from '../components/HistoryCard';
 
 const WalletScreen = () => (
   <View style={walletStyle.container}>
@@ -9,8 +10,8 @@ const WalletScreen = () => (
       <TopHeader />
     </View>
     <WalletOptions />
-    <View>
-      <Text> Body </Text>
+    <View style={walletStyle.body}>
+      <HistoryCard />
     </View>
   </View>
 );
@@ -29,6 +30,14 @@ const walletStyle = StyleSheet.create({
   container: {
     height: mainHEIGHT,
     width: mainWidth,
+    backgroundColor: '#5056FD',
+  },
+  body: {
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    overflow: 'hidden',
+    backgroundColor: 'white',
+    height: mainHEIGHT,
   },
 });
 

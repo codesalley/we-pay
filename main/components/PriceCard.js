@@ -22,7 +22,7 @@ const PriceCard = ({props}) => {
 
 const style = StyleSheet.create({
   priceCard: {
-    backgroundColor: '#4096FD',
+    backgroundColor: '#4096FD81',
     marginRight: 20,
     borderTopEndRadius: 10,
     borderTopLeftRadius: 10,
