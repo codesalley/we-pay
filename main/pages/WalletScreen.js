@@ -1,19 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, SafeAreaView} from 'react-native';
 import TopHeader from '../components/TopHeader';
 import WalletOptions from '../components/WalletOptions';
 import HistoryCard from '../components/HistoryCard';
 
 const WalletScreen = () => (
-  <View style={walletStyle.container}>
-    <View style={walletStyle.mainIntro}>
-      <TopHeader />
+  <>
+    <View style={walletStyle.container}>
+      <SafeAreaView style={{backgroundColor: '#5056FD'}}></SafeAreaView>
+      <View style={walletStyle.mainIntro}>
+        <TopHeader />
+      </View>
+      <WalletOptions />
+      <View style={walletStyle.body}>
+        <HistoryCard />
+      </View>
     </View>
-    <WalletOptions />
-    <View style={walletStyle.body}>
-      <HistoryCard />
-    </View>
-  </View>
+  </>
 );
 
 const mainHEIGHT = Dimensions.get('window').height;

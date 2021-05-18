@@ -1,8 +1,10 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet, Dimensions} from 'react-native';
 import PriceCard from './PriceCard';
-
+import {Avatar} from 'react-native-elements';
+import {TextColor} from '../utils/constants';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import IoCon from 'react-native-vector-icons/Ionicons';
 
 Icon.loadFont();
 
@@ -49,21 +51,38 @@ const WalletOptions = () => {
   return (
     <View style={style.container}>
       <View style={style.currentPrice}>
-        <Text>12.3230383 BTC</Text>
-        <Text>$230383 10% ^</Text>
+        <Text style={style.btcPrice}>12.3230383 BTC</Text>
+        <Text style={style.balance}>
+          $230383 10% <IoCon name="caret-up-outline" />
+        </Text>
       </View>
       <View style={style.optionContainer}>
-        <View>
-          <Icon name="east" />
-          <Text>Send </Text>
+        <View style={style.option}>
+          <Avatar
+            rounded
+            icon={{name: 'east'}}
+            size={60}
+            containerStyle={style.optionIcon}
+          />
+          <Text style={style.optionText}>Send </Text>
         </View>
-        <View>
-          <Icon name="autorenew" />
-          <Text>Exchange </Text>
+        <View style={style.option}>
+          <Avatar
+            rounded
+            icon={{name: 'autorenew'}}
+            size={60}
+            containerStyle={style.optionIcon}
+          />
+          <Text style={style.optionText}>Exchange </Text>
         </View>
-        <View>
-          <Icon name="add" />
-          <Text>Receive</Text>
+        <View style={style.option}>
+          <Avatar
+            rounded
+            icon={{name: 'add'}}
+            size={60}
+            containerStyle={style.optionIcon}
+          />
+          <Text style={style.optionText}>Receive</Text>
         </View>
       </View>
       <View style={style.listContainer}>
@@ -81,6 +100,7 @@ const WalletOptions = () => {
 };
 
 const mainHeight = Dimensions.get('window').height;
+const mainWidth = Dimensions.get('window').width;
 
 const style = StyleSheet.create({
   listview: {
@@ -99,9 +119,44 @@ const style = StyleSheet.create({
   listContainer: {},
   optionContainer: {
     paddingHorizontal: '3%',
+    alignSelf: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    width: mainWidth,
   },
   currentPrice: {
     paddingHorizontal: '3%',
+    alignSelf: 'center',
+    paddingTop: 20,
+  },
+  btcPrice: {
+    fontSize: 25,
+    fontWeight: '700',
+    color: TextColor,
+  },
+  balance: {
+    alignSelf: 'center',
+    paddingTop: 5,
+    fontSize: 14,
+    fontWeight: '600',
+    color: TextColor,
+  },
+
+  optionIcon: {
+    backgroundColor: '#4096FD91',
+  },
+  optionText: {
+    color: TextColor,
+    fontSize: 15,
+    paddingTop: 10,
+    textAlign: 'center',
+    fontWeight: '600',
+  },
+  option: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 });
 
