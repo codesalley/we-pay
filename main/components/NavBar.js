@@ -2,8 +2,10 @@ import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {Link, useLocation} from 'react-router-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icos from 'react-native-vector-icons/Ionicons';
 
 Icon.loadFont();
+Icos.loadFont();
 
 const NavBar = () => {
   const setColor = inPath => {
@@ -19,7 +21,7 @@ const NavBar = () => {
     <View style={navStye.mainNav}>
       <Link to="/" underlayColor="white">
         <>
-          <Icon name="account-balance-wallet" size={30} style={setColor('/')} />
+          <Icos name="wallet" size={30} style={setColor('/')} />
           <Text style={setColor('/')}>Wallet</Text>
         </>
       </Link>
