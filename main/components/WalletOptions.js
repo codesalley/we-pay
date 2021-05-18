@@ -129,11 +129,13 @@ const style = StyleSheet.create({
     paddingHorizontal: '3%',
     alignSelf: 'center',
     paddingTop: 20,
+    fontFamily: 'Poppins',
   },
   btcPrice: {
     fontSize: 25,
     fontWeight: '700',
     color: TextColor,
+    fontFamily: 'Poppins',
   },
   balance: {
     alignSelf: 'center',
@@ -141,6 +143,7 @@ const style = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: TextColor,
+    fontFamily: 'Poppins',
   },
 
   optionIcon: {
@@ -152,11 +155,13 @@ const style = StyleSheet.create({
     paddingTop: 10,
     textAlign: 'center',
     fontWeight: '600',
+    fontFamily: 'Poppins',
   },
   option: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    fontFamily: 'Poppins',
   },
 });
 

@@ -42,7 +42,8 @@ const SignUpScreen = () => {
           secureTextEntry={true}
           style={SignUpStyle.inputText}
         />
-        <TouchableHighlight>
+
+        <TouchableHighlight onPress={() => console.log('cliked')}>
           <Text>Sign Up</Text>
         </TouchableHighlight>
       </View>

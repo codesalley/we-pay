@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  SafeAreaView,
+  StatusBar,
+} from 'react-native';
 import TopHeader from '../components/TopHeader';
 import WalletOptions from '../components/WalletOptions';
 import HistoryCard from '../components/HistoryCard';
@@ -7,6 +14,7 @@ import HistoryCard from '../components/HistoryCard';
 const WalletScreen = () => (
   <>
     <View style={walletStyle.container}>
+      <StatusBar barStyle={'light-content'} />
       <SafeAreaView style={{backgroundColor: '#5056FD'}}></SafeAreaView>
       <View style={walletStyle.mainIntro}>
         <TopHeader />

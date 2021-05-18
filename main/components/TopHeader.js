@@ -32,12 +32,13 @@ const TopHeader = () => {
 const headerStyle = StyleSheet.create({
   dateDay: {
     backgroundColor: 'white',
-    fontSize: 16,
+    fontSize: 15,
     padding: 8,
     borderRadius: 18,
     overflow: 'hidden',
     color: MainColor,
-    fontWeight: '700',
+    fontWeight: '600',
+    fontFamily: 'Poppins',
   },
   dateMonth: {
     paddingLeft: 10,
@@ -45,6 +46,7 @@ const headerStyle = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     color: 'white',
+    fontFamily: 'Poppins',
   },
   container: {
     paddingVertical: 10,
@@ -55,12 +57,14 @@ const headerStyle = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     alignSelf: 'center',
+    fontFamily: 'Poppins',
   },
   weatherC: {
     color: 'white',
     alignSelf: 'center',
     fontSize: 17,
     paddingLeft: 5,
+    fontFamily: 'Poppins',
   },
 });
 

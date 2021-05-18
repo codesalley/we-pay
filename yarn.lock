@@ -5376,6 +5376,11 @@ react-native-elements@^3.4.1:
     react-native-ratings "^7.3.0"
     react-native-size-matters "^0.3.1"
 
+react-native-mmkv-storage@^0.5.8:
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/react-native-mmkv-storage/-/react-native-mmkv-storage-0.5.8.tgz#7ae4ad1e67e26c1e2092a4129e02d3b5de8ba3e1"
+  integrity sha512-+h4NKVckoHh6y0I4ONxX3UpHIsEdKgzYvoZyMGeQfTZ7YJwhUrWBvje/HsLyPhbWoQixT0rchTw81QhYHh2nNg==
+
 react-native-ratings@^7.3.0:
   version "7.6.1"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-7.6.1.tgz#b3d8a99a0c12fd6874f7e3c0e492089543d837c8"

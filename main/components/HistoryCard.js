@@ -53,21 +53,26 @@ const Histroystyle = StyleSheet.create({
     borderBottomColor: 'gray',
     borderBottomWidth: 2,
     position: 'relative',
+    fontFamily: 'Poppins',
   },
   container: {},
   routesBody: {
     marginHorizontal: '3%',
+    fontFamily: 'Poppins',
   },
   active: {
     borderBottomColor: 'red',
     borderBottomWidth: 1,
     paddingBottom: 2,
+    fontFamily: 'Poppins',
   },
   disable: {
     paddingBottom: 2,
+    fontFamily: 'Poppins',
   },
   btnText: {
     fontSize: 18,
+    fontFamily: 'Poppins',
   },
 });
 

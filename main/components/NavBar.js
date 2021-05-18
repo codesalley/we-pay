@@ -59,12 +59,15 @@ const navStye = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: '5%',
     paddingVertical: 10,
+    fontFamily: 'Poppins',
   },
   activeNavColor: {
     color: '#5056FD',
+    fontFamily: 'Poppins',
   },
   disableNavColor: {
     color: 'gray',
+    fontFamily: 'Poppins',
   },
 });
 

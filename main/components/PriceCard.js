@@ -44,10 +44,12 @@ const style = StyleSheet.create({
     overflow: 'hidden',
     marginRight: 10,
     fontWeight: '900',
+    fontFamily: 'Poppins',
   },
   text: {
     color: 'white',
     fontWeight: '700',
+    fontFamily: 'Poppins',
   },
 });
 
