@@ -1,17 +1,67 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import {format} from 'date-fns';
+import {Avatar} from 'react-native-elements';
+import {MainColor} from '../utils/constants';
 
-const TopHeader = () => (
-  <>
-    <View>
-      <Text> Time</Text>
-      <Text> -0- </Text>
-    </View>
-    <View>
-      <Text> Weather </Text>
-      <Text> -10- </Text>
-    </View>
-  </>
-);
+import Icon from 'react-native-vector-icons/Ionicons';
+
+const TopHeader = () => {
+  const date = format(Date.now(), 'dd MMM').split(' ');
+
+  return (
+    <>
+      <View style={headerStyle.container}>
+        <Avatar
+          containerStyle={{backgroundColor: 'white'}}
+          titleStyle={headerStyle.dateDay}
+          rounded
+          title={date[0]}
+        />
+
+        <Text style={headerStyle.dateMonth}>{date[1]}</Text>
+      </View>
+      <View style={headerStyle.container}>
+        <Text style={headerStyle.weatherN}> +26 </Text>
+        <Icon name="moon-outline" style={headerStyle.weatherC} />
+      </View>
+    </>
+  );
+};
+
+const headerStyle = StyleSheet.create({
+  dateDay: {
+    backgroundColor: 'white',
+    fontSize: 16,
+    padding: 8,
+    borderRadius: 18,
+    overflow: 'hidden',
+    color: MainColor,
+    fontWeight: '700',
+  },
+  dateMonth: {
+    paddingLeft: 10,
+    alignSelf: 'center',
+    fontSize: 18,
+    fontWeight: '600',
+    color: 'white',
+  },
+  container: {
+    paddingVertical: 10,
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  weatherN: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center',
+  },
+  weatherC: {
+    color: 'white',
+    alignSelf: 'center',
+    fontSize: 17,
+    paddingLeft: 5,
+  },
+});
 
 export default TopHeader;

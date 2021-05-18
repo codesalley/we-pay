@@ -61,8 +61,11 @@ const Histroystyle = StyleSheet.create({
   active: {
     borderBottomColor: 'red',
     borderBottomWidth: 1,
+    paddingBottom: 2,
   },
-  disable: {},
+  disable: {
+    paddingBottom: 2,
+  },
   btnText: {
     fontSize: 18,
   },

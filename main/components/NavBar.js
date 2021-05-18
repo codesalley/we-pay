@@ -21,7 +21,7 @@ const NavBar = () => {
     <View style={navStye.mainNav}>
       <Link to="/" underlayColor="white">
         <>
-          <Icos name="wallet" size={30} style={setColor('/')} />
+          <Icos name="wallet-outline" size={30} style={setColor('/')} />
           <Text style={setColor('/')}>Wallet</Text>
         </>
       </Link>
