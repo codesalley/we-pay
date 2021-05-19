@@ -15,26 +15,48 @@ const App = () => {
     <MainAuthContext>
       <NativeRouter>
         <View style={style.pageContainer}>
-          <SecureRoute exact path="/" component={WalletScreen} />
+          <SecureRoute
+            exact
+            path="/"
+            component={() => (
+              <>
+                <WalletScreen />
+                <NavBar />
+              </>
+            )}
+          />
 
-          <SecureRoute path="/cards">
-            <CardsSCreen />
-            <NavBar />
-          </SecureRoute>
+          <SecureRoute
+            path="/cards"
+            component={() => (
+              <>
+                <CardsSCreen />
+                <NavBar />
+              </>
+            )}
+          />
 
-          <SecureRoute path="/prices">
-            <PricesScreen />
-            <NavBar />
-          </SecureRoute>
+          <SecureRoute
+            path="/prices"
+            component={() => (
+              <>
+                <PricesScreen />
+                <NavBar />
+              </>
+            )}
+          />
 
-          <SecureRoute path="/more">
-            <MoreScreen />
-            <NavBar />
-          </SecureRoute>
+          <SecureRoute
+            path="/more"
+            component={() => (
+              <>
+                <MoreScreen />
+                <NavBar />
+              </>
+            )}
+          />
 
-          <Route path="/signup" component>
-            <SignUpScreen />
-          </Route>
+          <Route path="/signup" component={() => <SignUpScreen />} />
         </View>
       </NativeRouter>
     </MainAuthContext>

@@ -10,17 +10,27 @@ import {
   StatusBar,
   TouchableHighlight,
 } from 'react-native';
-import {MainColor, TextColor} from '../utils/constants';
+import {MainColor, TextColor, saveToken} from '../utils/constants';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useUserContext} from '../context/context';
+import {useHistory} from 'react-router-native';
 
 const SignUpScreen = () => {
   const [username, setUsername] = useState('');
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
   const [pin, setPin] = useState('');
+  const {SignUP, profile, userProfile} = useUserContext();
+  const location = useHistory();
 
-  const singUp = async () => {};
+  const singUp = async () => {
+    const response = await SignUP(username, email, password, pin);
+    if (!response === false) {
+      const res = await userProfile(response.wepay);
+      res ? location.push('/') : null;
+    }
+  };
 
   return (
     <View style={SignUpStyle.body}>
@@ -60,6 +70,11 @@ const SignUpScreen = () => {
           inputContainerStyle={SignUpStyle.input}
           style={SignUpStyle.inputText}
           onChangeText={val => setPin(val)}
+          keyboardType={'number-pad'}
+          textContentType={'oneTimeCode'}
+          maxLength={4}
+          dataDetectorTypes={'phoneNumber'}
+          al
         />
 
         <TouchableHighlight style={SignUpStyle.btn} onPress={() => singUp()}>

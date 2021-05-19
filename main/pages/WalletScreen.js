@@ -23,6 +23,7 @@ const WalletScreen = () => (
     <View style={walletStyle.body}>
       <HistoryCard />
     </View>
+    <NavBar />
   </View>
 );
 

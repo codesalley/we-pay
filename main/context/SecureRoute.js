@@ -1,5 +1,6 @@
 import React from 'react';
 import {useUserContext} from './context';
+import {View} from 'react-router-native';
 import {
   Route,
   Redirect,
@@ -8,10 +9,17 @@ import {
   Link,
 } from 'react-router-native';
 
-function SecureRoute({children}) {
+function SecureRoute({component: Component, ...rest}) {
   const {profile} = useUserContext();
 
-  return <Route>{profile ? children : () => <Redirect to="/signup" />}</Route>;
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        profile ? <Component {...props} /> : <Redirect to="/signup" />
+      }
+    />
+  );
 }
 
 export default SecureRoute;

@@ -6,6 +6,7 @@ export const ProfileUrl = 'http://127.0.0.1:3000/api/me';
 
 export const saveToken = async token => {
   try {
+    console.log(await AsyncStorage.getItem('token'));
     await AsyncStorage.setItem('token', token);
   } catch (error) {
     return false;
@@ -25,47 +26,24 @@ export const getToken = async () => {
   }
 };
 
-export const signUp = async (username, email, password, pin) => {
-  try {
-    const data = await fetch(SignUpUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: username,
-        email,
-        password,
-        pin,
-      }),
-    }).then(e => e);
-    const res = await data.json();
-    return res;
-  } catch (error) {}
-};
-
 export const signIn = () => {};
 
-export const getProfile = async () => {
-  const token = await getToken();
-  if (!token) {
-    return false;
-  } else {
-    try {
-      const headerData = JSON.stringify({wepay: token});
-      const response = await fetch(ProfileUrl, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          headerData,
-        },
-      });
+export const getProfile = async token => {
+  try {
+    const headerData = JSON.stringify({wepay: token});
 
-      const data = await response.json();
-      console.log(data);
-      return data;
-    } catch (error) {
-      return false;
-    }
+    console.log(headerData);
+    const response = await fetch(ProfileUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        wepay: token,
+      },
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return false;
   }
 };
