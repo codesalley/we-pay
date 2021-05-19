@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView, StatusBar} from 'react-native';
+import NavBar from '../components/NavBar';
 
 const PricesScreen = () => (
   <View>

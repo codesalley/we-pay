@@ -7,32 +7,37 @@ import MoreScreen from './pages/MoreScreen';
 import PricesScreen from './pages/PricesScreen';
 import NavBar from './components/NavBar';
 import SignUpScreen from './pages/SignUpScreen';
+import SecureRoute from './context/SecureRoute';
+import {MainAuthContext} from './context/context';
 
 const App = () => {
   return (
-    <NativeRouter>
-      <View style={style.pageContainer}>
-        <Route exact path="/">
-          <WalletScreen />
-          <NavBar />
-        </Route>
-        <Route exact path="/cards">
-          <CardsSCreen />
-          <NavBar />
-        </Route>
-        <Route exact path="/prices">
-          <PricesScreen />
-          <NavBar />
-        </Route>
-        <Route exact path="/more">
-          <MoreScreen />
-          <NavBar />
-        </Route>
-        <Route exct path="/logout">
-          <SignUpScreen />
-        </Route>
-      </View>
-    </NativeRouter>
+    <MainAuthContext>
+      <NativeRouter>
+        <View style={style.pageContainer}>
+          <SecureRoute exact path="/" component={WalletScreen} />
+
+          <SecureRoute path="/cards">
+            <CardsSCreen />
+            <NavBar />
+          </SecureRoute>
+
+          <SecureRoute path="/prices">
+            <PricesScreen />
+            <NavBar />
+          </SecureRoute>
+
+          <SecureRoute path="/more">
+            <MoreScreen />
+            <NavBar />
+          </SecureRoute>
+
+          <Route path="/signup" component>
+            <SignUpScreen />
+          </Route>
+        </View>
+      </NativeRouter>
+    </MainAuthContext>
   );
 };
 

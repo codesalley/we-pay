@@ -10,21 +10,20 @@ import {
 import TopHeader from '../components/TopHeader';
 import WalletOptions from '../components/WalletOptions';
 import HistoryCard from '../components/HistoryCard';
+import NavBar from '../components/NavBar';
 
 const WalletScreen = () => (
-  <>
-    <View style={walletStyle.container}>
-      <StatusBar barStyle={'light-content'} />
-      <SafeAreaView style={{backgroundColor: '#5056FD'}}></SafeAreaView>
-      <View style={walletStyle.mainIntro}>
-        <TopHeader />
-      </View>
-      <WalletOptions />
-      <View style={walletStyle.body}>
-        <HistoryCard />
-      </View>
+  <View style={walletStyle.container}>
+    <StatusBar barStyle={'light-content'} />
+    <SafeAreaView style={{backgroundColor: '#5056FD'}}></SafeAreaView>
+    <View style={walletStyle.mainIntro}>
+      <TopHeader />
     </View>
-  </>
+    <WalletOptions />
+    <View style={walletStyle.body}>
+      <HistoryCard />
+    </View>
+  </View>
 );
 
 const mainHEIGHT = Dimensions.get('window').height;
