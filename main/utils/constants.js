@@ -42,7 +42,7 @@ export const getToken = async () => {
   }
 };
 
-export const signIn = () => {};
+export const signIn = async (email, password) => {};
 
 export const getProfile = async token => {
   try {

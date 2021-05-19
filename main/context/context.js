@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {Route} from 'react-router-native';
-import {getProfile, SignUpUrl} from '../utils/constants';
+import {getProfile, SignUpUrl, saveToken} from '../utils/constants';
 
 const UserContext = React.createContext();
 
@@ -30,6 +30,7 @@ export const MainAuthContext = ({children}) => {
       if (res.msg || !res) {
         return false;
       } else {
+        saveToken(res.wepay);
         return res;
       }
     } catch (error) {

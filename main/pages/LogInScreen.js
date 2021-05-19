@@ -10,7 +10,7 @@ import {
   StatusBar,
   TouchableHighlight,
 } from 'react-native';
-import {MainColor, TextColor, saveToken} from '../utils/constants';
+import {MainColor, TextColor, saveToken, getToken} from '../utils/constants';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useUserContext} from '../context/context';
@@ -22,6 +22,12 @@ const LogInScreen = () => {
 
   const {SignUP, profile, userProfile} = useUserContext();
   const location = useHistory();
+
+  const testFn = async () => {
+    console.log('====----===');
+    const res = await getToken();
+    console.log(res);
+  };
 
   const singUp = async () => {
     const response = await SignUP(username, email, password, pin);
@@ -55,7 +61,11 @@ const LogInScreen = () => {
           onChangeText={val => setpassword(val)}
         />
 
-        <TouchableHighlight style={SignUpStyle.btn} onPress={() => singUp()}>
+        <TouchableHighlight
+          style={SignUpStyle.btn}
+          onPress={() => {
+            testFn();
+          }}>
           <Text style={SignUpStyle.btnText}>Login</Text>
         </TouchableHighlight>
 
