@@ -14,7 +14,7 @@ import {MainColor, TextColor, saveToken} from '../utils/constants';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useUserContext} from '../context/context';
-import {useHistory} from 'react-router-native';
+import {useHistory, Link, Redirect} from 'react-router-native';
 
 const SignUpScreen = () => {
   const [username, setUsername] = useState('');
@@ -80,6 +80,11 @@ const SignUpScreen = () => {
         <TouchableHighlight style={SignUpStyle.btn} onPress={() => singUp()}>
           <Text style={SignUpStyle.btnText}>Sign Up</Text>
         </TouchableHighlight>
+        <TouchableHighlight
+          style={SignUpStyle.login}
+          onPress={() => location.push('/login')}>
+          <Text style={SignUpStyle.loginText}>Log In</Text>
+        </TouchableHighlight>
       </View>
     </View>
   );
@@ -100,6 +105,8 @@ const SignUpStyle = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: '20%',
   },
+  login: {},
+  loginText: {},
   input: {
     borderColor: MainColor,
     borderWidth: 1,

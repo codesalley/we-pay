@@ -13,6 +13,22 @@ export const saveToken = async token => {
   }
 };
 
+export const saveProfile = async info => {
+  try {
+    await AsyncStorage.setItem('profile', info);
+  } catch (error) {
+    return false;
+  }
+};
+
+export const logout = async () => {
+  try {
+    await AsyncStorage.clear();
+  } catch (error) {
+    return false;
+  }
+};
+
 export const getToken = async () => {
   try {
     const res = await AsyncStorage.getItem('token');

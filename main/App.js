@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import SignUpScreen from './pages/SignUpScreen';
 import SecureRoute from './context/SecureRoute';
 import {MainAuthContext} from './context/context';
+import LogInScreen from './pages/LogInScreen';
 
 const App = () => {
   return (
@@ -57,6 +58,7 @@ const App = () => {
           />
 
           <Route path="/signup" component={() => <SignUpScreen />} />
+          <Route path="/login" component={() => <LogInScreen />} />
         </View>
       </NativeRouter>
     </MainAuthContext>
