@@ -10,15 +10,17 @@ import SignUpScreen from './pages/SignUpScreen';
 import SecureRoute from './context/SecureRoute';
 import {MainAuthContext} from './context/context';
 import LogInScreen from './pages/LogInScreen';
+import SplashScreen from './pages/SplashScreen';
 
 const App = () => {
+  console.log();
   return (
     <MainAuthContext>
       <NativeRouter>
         <View style={style.pageContainer}>
           <SecureRoute
             exact
-            path="/"
+            path="/wallet"
             component={() => (
               <>
                 <WalletScreen />
@@ -56,6 +58,8 @@ const App = () => {
               </>
             )}
           />
+
+          <Route exact path="/" component={() => <SplashScreen />} />
 
           <Route path="/signup" component={() => <SignUpScreen />} />
           <Route path="/login" component={() => <LogInScreen />} />

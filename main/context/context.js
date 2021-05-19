@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {Route} from 'react-router-native';
-import {getProfile, SignUpUrl, saveToken} from '../utils/constants';
+import {getProfile, SignUpUrl, saveToken, loginUrl} from '../utils/constants';
 
 const UserContext = React.createContext();
 
@@ -38,13 +38,25 @@ export const MainAuthContext = ({children}) => {
     }
   };
 
+  const login = async (email, password) => {
+    const response = await fetch(loginUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, password}),
+    });
+    const data = await response.json();
+    return data;
+  };
+
   const userProfile = async token => {
     const res = await getProfile(token);
     console.log(res);
     if (res.msg) {
       return false;
     } else {
-      setProfile(res);
+      setProfile(await res);
       return res;
     }
   };
@@ -54,6 +66,7 @@ export const MainAuthContext = ({children}) => {
     token,
     SignUP,
     userProfile,
+    login,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

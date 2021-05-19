@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const MainColor = '#5056FD';
 export const TextColor = '#e5e5e5';
 export const SignUpUrl = 'http://127.0.0.1:3000/api/signup';
+export const loginUrl = 'http://127.0.0.1:3000/api/signin';
 export const ProfileUrl = 'http://127.0.0.1:3000/api/me';
 
 export const saveToken = async token => {
@@ -41,8 +42,6 @@ export const getToken = async () => {
     return false;
   }
 };
-
-export const signIn = async (email, password) => {};
 
 export const getProfile = async token => {
   try {

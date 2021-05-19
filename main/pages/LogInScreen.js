@@ -20,20 +20,15 @@ const LogInScreen = () => {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
 
-  const {SignUP, profile, userProfile} = useUserContext();
+  const {profile, userProfile, login} = useUserContext();
   const location = useHistory();
 
-  const testFn = async () => {
-    console.log('====----===');
-    const res = await getToken();
-    console.log(res);
-  };
+  const singIn = async () => {
+    const response = await login(email, password);
 
-  const singUp = async () => {
-    const response = await SignUP(username, email, password, pin);
-    if (!response === false) {
+    if (response != false) {
       const res = await userProfile(response.wepay);
-      res ? location.push('/') : null;
+      res ? location.push('/wallet') : null;
     }
   };
 
@@ -64,7 +59,7 @@ const LogInScreen = () => {
         <TouchableHighlight
           style={SignUpStyle.btn}
           onPress={() => {
-            testFn();
+            singIn();
           }}>
           <Text style={SignUpStyle.btnText}>Login</Text>
         </TouchableHighlight>

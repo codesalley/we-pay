@@ -19,10 +19,10 @@ const NavBar = () => {
 
   return (
     <View style={navStye.mainNav}>
-      <Link to="/" underlayColor="white">
+      <Link to="/wallet" underlayColor="white">
         <>
-          <Icos name="wallet-outline" size={30} style={setColor('/')} />
-          <Text style={setColor('/')}>Wallet</Text>
+          <Icos name="wallet-outline" size={30} style={setColor('/wallet')} />
+          <Text style={setColor('/wallet')}>Wallet</Text>
         </>
       </Link>
       <Link to="/cards" underlayColor="white">

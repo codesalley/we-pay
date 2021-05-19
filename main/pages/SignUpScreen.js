@@ -28,7 +28,7 @@ const SignUpScreen = () => {
     const response = await SignUP(username, email, password, pin);
     if (!response === false) {
       const res = await userProfile(response.wepay);
-      res ? location.push('/') : null;
+      res ? location.push('/wallet') : null;
     }
   };
 
