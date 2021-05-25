@@ -13,7 +13,6 @@ import LogInScreen from './pages/LogInScreen';
 import SplashScreen from './pages/SplashScreen';
 
 const App = () => {
-  console.log();
   return (
     <MainAuthContext>
       <NativeRouter>

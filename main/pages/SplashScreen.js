@@ -10,7 +10,6 @@ const SplashScreen = () => {
 
   const moveMe = async () => {
     const token = await getToken();
-    console.log(token);
     const res = await userProfile(await token);
     if (res) {
       return true;

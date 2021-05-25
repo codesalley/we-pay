@@ -52,7 +52,6 @@ export const MainAuthContext = ({children}) => {
 
   const userProfile = async token => {
     const res = await getProfile(token);
-    console.log(res);
     if (res.msg) {
       return false;
     } else {

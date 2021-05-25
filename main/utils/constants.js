@@ -7,7 +7,6 @@ export const ProfileUrl = 'http://127.0.0.1:3000/api/me';
 
 export const saveToken = async token => {
   try {
-    console.log(await AsyncStorage.getItem('token'));
     await AsyncStorage.setItem('token', token);
   } catch (error) {
     return false;
@@ -47,7 +46,6 @@ export const getProfile = async token => {
   try {
     const headerData = JSON.stringify({wepay: token});
 
-    console.log(headerData);
     const response = await fetch(ProfileUrl, {
       method: 'GET',
       headers: {

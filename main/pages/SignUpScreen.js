@@ -34,7 +34,7 @@ const SignUpScreen = () => {
 
   return (
     <View style={SignUpStyle.body}>
-      <SafeAreaView style={{backgroundColor: 'white'}}></SafeAreaView>
+      <SafeAreaView style={{backgroundColor: 'white'}} />
       <View style={SignUpStyle.top}>
         <Text>Welcome To </Text>
         <Text> Wepay </Text>
